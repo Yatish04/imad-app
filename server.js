@@ -38,14 +38,12 @@ var pool=new Pool(config);
          }
          else
          {
-             res.send(JSON.stringify(result));
+             res.send(JSON.stringify(result.rows));
          }
      })
  })
 
-createtemplate=function(data){
-    
-}
+createtemplate=function(data)
 
 
 
