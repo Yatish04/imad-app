@@ -9,6 +9,6 @@ function fun(){
            // }
         //}
     //}
-    request.open('GET','http://yatishhr.imad.hasura-app.io/new');
+    request.open('GET','http://yatishhr.imad.hasura-app.io/new',true);
     request.send(null);
 }
