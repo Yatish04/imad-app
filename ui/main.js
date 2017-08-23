@@ -1,2 +1,3 @@
-console.log('Loaded!');
-alert('hello');
+function fun(){
+    alert("hello");
+}
