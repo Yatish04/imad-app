@@ -1,3 +1,4 @@
+window.onload;
 var button=document.getElementById('btn1');
 
 button.onclick=function() {
