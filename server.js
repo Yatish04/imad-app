@@ -31,12 +31,8 @@ app.get('/ui/main.js',function(req,res){
     res.sendFile(path.join(__dirname,'ui','main.js'));
 });
 app.get('/new',function(req,res){
-    res.sendFile('new.html');
+    res.sendFile.join('new.html');
 });
-app.get('/ui/main.js',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','main.js'));
-});
-
 var pool=new Pool(config);
  app.get('/test',function(req,res){
      pool.query('SELECT *FROM content',function(err,result){
