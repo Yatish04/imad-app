@@ -1,4 +1,4 @@
-window.onload;
+window.onload=function(){
 var button=document.getElementById('btn1');
 
 button.onclick=function() {
@@ -12,4 +12,5 @@ button.onclick=function() {
         }
     }
     request.open('GET','http://yatishhr.imad.hasura-app.io/new',true);
+}
 }
