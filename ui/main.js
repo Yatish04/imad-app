@@ -1,7 +1,6 @@
 var button=document.getElementById('btn');
 
 button.onclick=function() {
-   // aler');t('hello
     var request= new XMLHttpRequest();
    request.onreadystatechange=function(){
         if(request.readyState===XMLHttpRequest.DONE){
