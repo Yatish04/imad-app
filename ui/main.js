@@ -1,4 +1,4 @@
-var button=document.getElementById('btn');
+var button=document.getElementById('btn1');
 
 button.onclick=function() {
     var request= new XMLHttpRequest();
