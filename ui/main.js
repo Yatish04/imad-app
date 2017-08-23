@@ -11,5 +11,4 @@ button.onclick=function() {
         }
     }
     request.open('GET','http://yatishhr.imad.hasura-app.io/new',true);
-    request.send(null);
 }
