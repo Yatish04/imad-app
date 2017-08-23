@@ -1,0 +1,23 @@
+.bck{
+    position: absolute;
+    top: 225px;
+    left: 500px;
+    background-color: lightblue;
+}
+.bdy{
+    background-color: lightblue;
+}
+.btn{
+    color: black;
+    background: lightgreen;
+    box-shadow: 1px 1px 2px 2px;
+}
+.cstt{
+
+    height: 20px;
+    width: 150px;
+}
+.cst{
+    height: 40px;
+    width: 100px;
+}
