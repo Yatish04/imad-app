@@ -1,5 +1,5 @@
 function fun(){
-    alert('hello');
+   // aler');t('hello
     var request= new XMLHttpRequest();
    // request.onreadystatechange=function(){
      //   if(request.readyState===XMLHttpRequest.DONE){
