@@ -10,4 +10,4 @@ function fun(){
     //}
     request.open('GET','http://yatishhr.imad.hasura-app.io/new');
     request.send(null);
-};
+}
