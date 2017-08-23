@@ -33,8 +33,8 @@ app.get('/ui/main.js',function(req,res){
 app.get('/new',function(req,res){
     res.sendFile(path.join(__dirname,'ui','new.html'));
 });
-app.get('/new.css',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','new.css'));
+app.get('/login',function(req,res){
+    res.sendFile(path.join(__dirname,'ui','login.html'));
 });
 var pool=new Pool(config);
  app.get('/test',function(req,res){
