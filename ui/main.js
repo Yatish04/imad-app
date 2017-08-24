@@ -20,5 +20,5 @@
 //}
 //}
 function fun2(){
-    window.open("http://yatishhr.imad.hasura-app.io/login", "_blank");
+    window.open("http://yatishhr.imad.hasura-app.io/login", "_self");
 }
