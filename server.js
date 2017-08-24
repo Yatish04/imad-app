@@ -48,7 +48,7 @@ function hash(password,salt){
 }
 
 
-app.post('/newuser',function(req,res){
+app.get('/newuser',function(req,res){
     var name=req.body.name;
     var email=req.body.email;
     var username=req.body.username;
