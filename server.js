@@ -7,7 +7,7 @@ var app = express();
 var bodyparser=require('body-parser');
 app.use(morgan('combined'));
 app.use(bodyparser.json());
-var pool=new Pool(config);
+
 var config={
     user: 'yatishhr',
     database: 'yatishhr',
@@ -17,7 +17,7 @@ var config={
     
 };
 
-
+var pool=new Pool(config);
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
