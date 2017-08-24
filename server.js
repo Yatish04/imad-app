@@ -7,7 +7,7 @@ var app = express();
 var bodyparser=require('body-parser');
 app.use(morgan('combined'));
 app.use(bodyparser.json());
-
+var pool=new Pool(config);
 var config={
     user: 'yatishhr',
     database: 'yatishhr',
@@ -55,7 +55,7 @@ app.post('/newuser',function(req,res){
     var password=req.body.password;
     var salt=crypto.randomBytes(128).toString('hex');
     var hashed=hash(password,salt);
-    Pool.query('INSERT INTO "user" (username,password,name,email) VALUES ($1,$2,$3,$4)',[username,password,name,email],function(err,res){
+    pool.query('INSERT INTO "user" (username,password,name,email) VALUES ($1,$2,$3,$4)',[username,password,name,email],function(err,res){
         if(err){
             res.status(501).send(err.toString());
         }
@@ -69,7 +69,6 @@ app.post('/newuser',function(req,res){
 
 
 
-var pool=new Pool(config);
  app.get('/test',function(req,res){
      pool.query('SELECT *FROM content',function(err,result){
          if(err)
