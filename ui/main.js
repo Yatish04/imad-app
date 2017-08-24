@@ -26,6 +26,7 @@ function fun1(){
     window.open("http://yatishhr.imad.hasura-app.io/new", "_self");
 }
 function btn(){
+    alert('heel');
     var uname=document.getElementById('username');
     var passwrd=document.getElementById('password');
     var name=document.getElementById('name');
