@@ -25,3 +25,25 @@ function fun2(){
 function fun1(){
     window.open("http://yatishhr.imad.hasura-app.io/new", "_self");
 }
+function btn(){
+    var uname=document.getElementById('username');
+    var passwrd=document.getElementById('password');
+    var name=document.getElementById('name');
+    var email=document.getElementById('email');
+    var request=new XMLHttpRequest();
+    request.open("POST","http://yatishhr.imad.hasura-app.io/newuser",true);
+   request.onreadystatechange=function(){
+        if(request.readyState===XMLHttpRequest.DONE){
+            if(request.status===200)
+            {
+                request.send(JSON.stringify({name:name,username:username,email:email,password:password}));
+                window.open('GET','http://yatishhr.imad.hasura-app.io/login',true);
+                alert('Registered successfully');
+            }
+            else{
+                alert('Something went wrong');
+                request.send(null);
+            }
+        }
+   };
+}
