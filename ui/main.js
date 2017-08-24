@@ -31,7 +31,6 @@ function btn(){
     var passwrd=document.getElementById('password');
     var name=document.getElementById('name');
     var email=document.getElementById('email');
-    request.open('POST','http://yatishhr.imad.hasura-app.io/newuser',true);
    request.onreadystatechange=function(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200)
@@ -45,6 +44,7 @@ function btn(){
             }
         }
    };
+   request.open('POST','http://yatishhr.imad.hasura-app.io/newuser',true);
 request.send(JSON.stringify({name:name,username:username,email:email,password:password}));
 
 }
