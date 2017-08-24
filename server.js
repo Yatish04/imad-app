@@ -48,14 +48,14 @@ function hash(password,salt){
 }
 
 
-app.get('/newuser',function(req,res){
+app.post('/newuser',function(req,res){
     var name=req.body.name;
     var email=req.body.email;
     var username=req.body.username;
     var password=req.body.password;
     var salt=crypto.randomBytes(128).toString('hex');
     var hashed=hash(password,salt);
-    Pool.query('INSERT INTO "user" (username,password,name,email) ($1,$2,$3,$4)',[username,password,name,email],function(err,res){
+    Pool.query('INSERT INTO "user" (username,password,name,email) VALUES ($1,$2,$3,$4)',[username,password,name,email],function(err,res){
         if(err){
             res.status(501).send(err.toString());
         }
