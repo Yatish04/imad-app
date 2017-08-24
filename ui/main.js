@@ -40,7 +40,6 @@ function btn(){
             }
             else{
                 alert('Something went wrong');
-                request.send(null);
             }
         }
    };
