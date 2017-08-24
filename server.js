@@ -44,13 +44,9 @@ app.get('/new.css',function(req,res){
 
 function hash(password,salt){
     var hashed=crypto.pbkdf2Sync(password,salt,1000,512,'sha512');
-    //return ["pbkdf2","1000",salt,hashed.toString('hex')].join('$');
-    return hashed.toString('hex');
+    return ["pbkdf2","1000",salt,hashed.toString('hex')].join('$');
 }
 
-app.get('/hash',function(req,res){
-    res.send(hash('djvcs','hsdvc'));
-});
 app.post('/newuser',function(req,res){
     var name=req.body.name;
     var email=req.body.email;
