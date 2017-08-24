@@ -22,3 +22,6 @@
 function fun2(){
     window.open("http://yatishhr.imad.hasura-app.io/login", "_self");
 }
+function fun1(){
+    window.open("http://yatishhr.imad.hasura-app.io/new", "_self");
+}
