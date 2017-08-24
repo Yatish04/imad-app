@@ -4,7 +4,9 @@ var path = require('path');
 var Pool=require('pg').Pool;
 var crypto=require('crypto');
 var app = express();
+var bodyparser=require('body-parser');
 app.use(morgan('combined'));
+app.use(bodyparser.json());
 
 var config={
     user: 'yatishhr',
@@ -39,6 +41,34 @@ app.get('/login',function(req,res){
 app.get('/new.css',function(req,res){
     res.sendFile(path.join(__dirname,'ui','new.css'));
 });
+
+function hash(password,salt){
+    var hashed=crypto.pbkdf2Sync(password,salt,1000,512,'sha512');
+    return ["pbkdf2","1000",salt,hashed.toString('hex')].join('$');
+}
+
+
+app.post('/newuser',function(req,res){
+    var name=req.body.name;
+    var email=req.body.email;
+    var username=req.body.username;
+    var password=req.body.password;
+    var salt=crypto.randomBytes(128).toString('hex');
+    var hashed=hash(password,salt);
+    Pool.query('INSERT INTO "user" (username,password,name,email) ($1,$2,$3,$4)',[username,password,name,email],function(err,res){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send('uaer created successfully');
+        }
+    });
+    
+});
+
+
+
+
 var pool=new Pool(config);
  app.get('/test',function(req,res){
      pool.query('SELECT *FROM content',function(err,result){
