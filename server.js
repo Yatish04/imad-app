@@ -36,7 +36,7 @@ app.get('/new',function(req,res){
 app.get('/login',function(req,res){
     res.sendFile(path.join(__dirname,'ui','login.html'));
 });
-app.get('/css',function(req,res){
+app.get('/new.css',function(req,res){
     res.sendFile(path.join(__dirname,'ui','new.css'));
 });
 var pool=new Pool(config);
