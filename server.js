@@ -47,6 +47,21 @@ function hash(password,salt){
     return ["pbkdf2","1000",salt,hashed.toString('hex')].join('$');
 }
 
+app.post('/createuser',function(req,res){
+    var username=req.body.username;
+    var password=req.body.password;
+    var salt=crypto.randomBytes(128).toString('hex');
+    var dbstring=hash(password,salt);
+    pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,password],function(err,res){
+        if(err){
+            res.status(501).send(err.toString());
+        }
+        else{
+            res.send('uaer created successfully');
+        }
+    });
+});
+
 app.post('/newuser',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
