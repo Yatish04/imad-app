@@ -54,7 +54,7 @@ app.post('/createuser',function(req,res){
     var dbstring=hash(password,salt);
     pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,password],function(err,res){
         if(err){
-            res.status(501).send(err.toString());
+            res.status(500).send(err.toString());
         }
         else{
             res.send('uaer created successfully');
