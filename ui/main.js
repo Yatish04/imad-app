@@ -27,8 +27,8 @@ function fun1(){
 }
 function btn(){
     var request=new XMLHttpRequest();
-    var uname=document.getElementById('username');
-    var passwrd=document.getElementById('password');
+    var username=document.getElementById('username');
+    var password=document.getElementById('password');
     var name=document.getElementById('name');
     var email=document.getElementById('email');
    request.onreadystatechange=function(){
@@ -45,6 +45,6 @@ function btn(){
    };
    request.open('POST','http://yatishhr.imad.hasura-app.io/newuser',true);
    request.setRequestHeader('Content-Type','application/json');
-request.send(JSON.stringify({username:name,password:passwrd}));
+request.send(JSON.stringify({username:username,password:password}));
 
 }
