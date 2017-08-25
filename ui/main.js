@@ -26,7 +26,7 @@ function fun1(){
     window.open("http://yatishhr.imad.hasura-app.io/new", "_self");
 }
 function btn(){
-    window.open('GET','http://yatishhr.imad.hasura-app.io/login',true);
+    window.open('GET','http://yatishhr.imad.hasura-app.io/login',"_self");
     var request=new XMLHttpRequest();
     var username=document.getElementById('username').value;
     var password=document.getElementById('password').value;
