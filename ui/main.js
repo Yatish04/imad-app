@@ -27,10 +27,10 @@ function fun1(){
 }
 function btn(){
     var request=new XMLHttpRequest();
-    var username=document.getElementById('username');
-    var password=document.getElementById('password');
-    var name=document.getElementById('name');
-    var email=document.getElementById('email');
+    var username=document.getElementById('username').value;
+    var password=document.getElementById('password').value;
+    var name=document.getElementById('name').value;
+    var email=document.getElementById('email').value;
    request.onreadystatechange=function(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200)
@@ -48,3 +48,6 @@ function btn(){
 request.send(JSON.stringify({username:username,password:password}));
 
 }
+
+
+
