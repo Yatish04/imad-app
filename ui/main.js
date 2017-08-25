@@ -66,6 +66,9 @@ function login(){
             }
             
     }
+    request.open("POST","http://yatishhr.imad.hasura-app.io/newlogin",true);
+    request.setRequestHeader('Content-Type','application/json');
+    request.send(JSON.stringify({username:username,password:password}));
     
 }
-
+}
