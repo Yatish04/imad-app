@@ -36,7 +36,7 @@ function btn(){
             if(request.status===200)
             {
                 window.open('GET','http://yatishhr.imad.hasura-app.io/login',true);
-                alert('Registered successfully');
+                //alert('Registered successfully');
             }
             else{
                 alert('Something went wrong');
