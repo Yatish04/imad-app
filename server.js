@@ -92,7 +92,7 @@ app.post('/newlogin',function(req,res){
         }
         else{
             if(result.rows.length===0){
-                res.send('Invalid credentials');
+                res.status(500).send('Invalid credentials');
                 
             }
             else{
@@ -103,7 +103,7 @@ app.post('/newlogin',function(req,res){
                     res.send("credentials are correct");
                 }
                 else{
-                    res.send('credentials are incorrect');
+                    res.send(403).send('credentials are incorrect');
                 }
             }
         }
