@@ -46,8 +46,8 @@ app.get('/new.css',function(req,res){
 });
 
 function hash(password,salt){
-    var hashed=crypto.pbkdf2Sync(password,salt,1000,512,'sha512');
-    return ["pbkdf2","1000",salt,hashed.toString('hex')].join('$');
+    var hashed=crypto.pbkdf2Sync(password,salt,10000,512,'sha512');
+    return ["pbkdf2","10000",salt,hashed.toString('hex')].join('$');
 }
 
 app.get('/createuser',function(req,res){
@@ -77,6 +77,37 @@ app.post('/newuser',function(req,res){
         else{
             res.send('user created successfully');
         }
+    });
+    
+});
+
+
+app.post('/newlogin',function(req,res){
+    var username=req.body.username;
+    var password=req.body.password;
+    var salt=crypto.randomBytes(128).toString('hex');
+    pool.query('SELECT FROM "user" WHERE username=$1',[username],function(err,result){
+        if(err){
+            res.send('Error');
+        }
+        else{
+            if(result.rows.length===0){
+                res.send('Invalid credentials');
+                
+            }
+            else{
+                var pass=result.rows[2];
+                var salt=pass.split('$')[1];
+                var hasht=hash(password,salt);
+                if(hasht===pass){
+                    res.send("credentials are correct");
+                }
+                else{
+                    res.send('credentials are incorrect');
+                }
+            }
+        }
+        
     });
     
 });
