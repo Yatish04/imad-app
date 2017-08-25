@@ -48,8 +48,6 @@ function hash(password,salt){
 }
 
 app.get('/createuser',function(req,res){
-    var username="hello";
-    var password="hello";
     var salt=crypto.randomBytes(128).toString('hex');
     var dbstring=hash(password,salt);
     pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,dbstring],function(err,result){
@@ -67,9 +65,9 @@ app.post('/newuser',function(req,res){
     var password=req.body.password;
     var salt=crypto.randomBytes(128).toString('hex');
     var hashed=hash(password,salt);
-    pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,hashed],function(err,res){
+    pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,hashed],function(err,result){
         if(err){
-            res.status(501).send(err.toString());
+            res.status(500).send(err.toString());
         }
         else{
             res.send('uaer created successfully');
