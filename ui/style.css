@@ -24,3 +24,8 @@ body {
     height:50px;
     width:60px;
 }
+@media screen and (max-width: 767px) {
+  .sidenav {
+    min-height: auto;
+    padding: 15px;
+  }
