@@ -96,8 +96,8 @@ app.post('/newlogin',function(req,res){
                 
             }
             else{
-                var pass=result.rows[2];
-                var salt=pass.split('$')[1];
+                var pass=result.rows[0].password;
+                var salt=pass.split('$')[2];
                 var hasht=hash(password,salt);
                 if(hasht===pass){
                     res.send("credentials are correct");
