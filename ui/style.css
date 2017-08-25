@@ -26,6 +26,6 @@ body {
 }
 @media screen and (max-width: 767px) {
   .sidenav {
-    min-height: auto;
+    min-height: 170px;
     padding: 15px;
-  }
+  }}
