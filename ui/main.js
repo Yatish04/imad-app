@@ -51,5 +51,21 @@ if(request.status===200){
 }
 }
 
-
+function login(){
+    var request=new XMLHttpRequest();
+    var username=document.getElementById('loginbtn').value;
+    var password=document.getElementById('passbtn').value;
+    request.onreadystatechange=function(){
+        if(request.readyState===XMLHttpRequest.DONE){
+            if(request.status===200)
+            {
+                alert('login successful');
+            }
+            else{
+                alert('invalid credentials');
+            }
+            
+    }
+    
+}
 
