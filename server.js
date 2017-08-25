@@ -66,9 +66,11 @@ app.get('/createuser',function(req,res){
 app.post('/newuser',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
+    var name=req.body.name;
+    var email=req.body.email;
     var salt=crypto.randomBytes(128).toString('hex');
     var hashed=hash(password,salt);
-    pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,hashed],function(err,result){
+    pool.query('INSERT INTO "user" (username,password,email,name) VALUES ($1,$2,$3,$4)',[username,hashed,email,name],function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
