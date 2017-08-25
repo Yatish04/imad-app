@@ -21,9 +21,11 @@
     height: 40px;
     width: 100px;
 }
-@media screen and (max-width: 767px) {
-  .sidenav {
-    min-height: auto;
-    padding: 15px;
-  }
+@media screen and (min-width: 240px) and (max-width: 767px){
+    .bck{
+    position: absolute;
+    top: 120px;
+    left: 350px;
+    background-color: lightblue;
+}
 }
