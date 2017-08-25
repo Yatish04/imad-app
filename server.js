@@ -86,7 +86,7 @@ app.post('/newlogin',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
     var salt=crypto.randomBytes(128).toString('hex');
-    pool.query('SELECT FROM "user" WHERE username=$1',[username],function(err,result){
+    pool.query('SELECT * FROM "user" WHERE username = $1',[username],function(err,result){
         if(err){
             res.send('Error');
         }
