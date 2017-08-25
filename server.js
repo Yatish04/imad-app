@@ -73,7 +73,7 @@ app.post('/newuser',function(req,res){
             res.status(500).send(err.toString());
         }
         else{
-            res.send('uaer created successfully');
+            res.send('user created successfully');
         }
     });
     
