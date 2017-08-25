@@ -59,6 +59,7 @@ app.get('/createuser',function(req,res){
         else{
             res.send('user created successfully');
         }
+        alert('user successful');
     });
 });
 
