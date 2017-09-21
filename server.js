@@ -75,7 +75,7 @@ app.post('/newuser',function(req,res){
             res.status(500).send(err.toString());
         }
         else{
-            res.send('user created successfully');
+            res.sendFile(path.join(__dirname, 'ui', 'index.html'));
         }
     });
     
