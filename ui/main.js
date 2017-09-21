@@ -46,7 +46,7 @@ function btn(){
    request.setRequestHeader('Content-Type','application/json');
 request.send(JSON.stringify({username:username,password:password,name:name,email:email}));
 if(request.status===200){
-        window.open('GET','http://yatishhr.imad.hasura-app.io/login',"_blank");
+        window.open('http://yatishhr.imad.hasura-app.io/login',"_blank");
 }
 }
 
