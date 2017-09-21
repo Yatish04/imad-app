@@ -35,8 +35,7 @@ function btn(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200)
             {
-                alert('Registered successfully \n Go back and login');
-                        window.open('GET','http://yatishhr.imad.hasura-app.io/login',"_blank");
+                return res.redirect('/UserHomePage');
             }
             else{
                 alert('Something went wrong');
