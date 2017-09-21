@@ -35,7 +35,7 @@ function btn(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200)
             {
-                return res.redirect('/');
+                res.redirect('/');
             }
             else{
                 alert('Something went wrong');
