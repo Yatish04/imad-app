@@ -75,7 +75,7 @@ app.post('/newuser',function(req,res){
             res.status(500).send(err.toString());
         }
         else{
-            res.redirect('/login');
+            res.status(200).send('successfull');
         }
     });
     
