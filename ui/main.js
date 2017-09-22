@@ -35,7 +35,7 @@ function btn(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200)
             {
-                res.redirect('/');
+                alert("registered\n please login");
             }
             else{
                 alert('Something went wrong');
