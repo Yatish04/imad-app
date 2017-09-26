@@ -125,7 +125,7 @@ app.post('/newlogin',function(req,res){
 app.get('/checklogin',function(req,res){
    
    if(req.session && req.session.auth && req.session.auth.userid){
-       res.send('you are logged in '+req.session.auth.userid.toString());
+       res.sendFile(path.join(__dirname, 'ui', 'index.html'));
    }
    else{
        res.send('You are not logged in');
