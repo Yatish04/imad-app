@@ -105,7 +105,7 @@ app.post('/comments',function(req,res){
                res.status(500).send(err.toString());
            }
            else{
-               res.send(result.length.toString());
+               res.status(200).send('ok');
            }
                    
                });
