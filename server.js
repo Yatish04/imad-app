@@ -95,7 +95,7 @@ app.post('/comments',function(req,res){
        
        var user=req.session.auth.username;
        var final=user+':'+text;
-       pool.query('INSERT INTO "content"(comments) VALUES ($1)',[final],function(err,result){
+       pool.query('INSERT INTO "content"(id,comments) VALUES ($1,$2)',[req.session.auth.userid,final],function(err,result){
            if(err){
                res.status(500).send(err.toString());
            }
