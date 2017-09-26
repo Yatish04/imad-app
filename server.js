@@ -94,8 +94,7 @@ app.post('/comments',function(req,res){
    if(req.session && req.session.auth && req.session.auth.userid){
        
        var user=req.session.auth.username;
-       console.log(user);
-       res.status(200).send(user);
+       res.status(200).send(text);
        
    }
    else{
