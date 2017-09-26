@@ -89,6 +89,32 @@ app.post('/newuser',function(req,res){
     
 });
 
+app.post('/comments',function(req,res){
+   var text=req.body.usertext;
+   if(req.session && req.session.auth && req.session.auth.userid){
+       
+       var user=req.session.auth.username;
+       console.log(user);
+       
+   }
+   else{
+       res.status(403).send('not logged in');
+   }
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.post('/newlogin',function(req,res){
     var username=req.body.username;
@@ -108,7 +134,7 @@ app.post('/newlogin',function(req,res){
                 var salt=pass.split('$')[2];
                 var hasht=hash(password,salt);
                 if(hasht===pass){
-                    req.session.auth={userid:result.rows[0].id };
+                    req.session.auth={userid:result.rows[0].id,username:result.rows[0].username };
                     
                     res.send("credentials are correct");
                 }
