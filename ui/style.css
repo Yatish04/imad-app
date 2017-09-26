@@ -42,4 +42,29 @@ footer {
   }
   .row.content {height:auto;}
 }
+nav{
+    align-content: center;
+}
+.commentsection{
+    text-decoration: solid;
+    font-family: cursive;  
 
+}
+#hel{
+    text-align: center;
+}
+#comment{
+    position: relative;
+    left: 85px;
+    width: 1000px;
+    height: 154px;
+}
+#submitbtn{
+  position: relative;
+  left: 85px;
+
+}
+.comments{
+  position: relative;
+  left: 85px;
+}
