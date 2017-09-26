@@ -100,7 +100,7 @@ app.post('/comments',function(req,res){
                res.status(500).send(err.toString());
            }
            else{
-               res.status(200).send('OK');
+               res.status(200).send(result.toString());
            }
            
        });
