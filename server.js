@@ -94,7 +94,17 @@ app.post('/comments',function(req,res){
    if(req.session && req.session.auth && req.session.auth.userid){
        
        var user=req.session.auth.username;
-       res.status(200).send(text);
+       var final=user+':'+text;
+       pool.query('INSERT INTO "content"(comments) VALUES ($1)',[final],function(err,result){
+           if(err){
+               res.status(500).send(err.toString());
+           }
+           else{
+               res.status(200).send('OK');
+           }
+           
+       });
+       
        
    }
    else{
