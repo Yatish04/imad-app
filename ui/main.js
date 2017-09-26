@@ -35,7 +35,7 @@ function btn(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200)
             {
-               window.open('http://yatishhr.imad.hasura-app.io/login',"_blank");
+                alert("registered\n please login");
             }
             else{
                 alert('Something went wrong');
@@ -47,7 +47,7 @@ function btn(){
 request.send(JSON.stringify({username:username,password:password,name:name,email:email}));
 if(request.status===200){
     console.log('successful');
-        
+        window.open('http://yatishhr.imad.hasura-app.io/login',"_blank");
 }
 }
 
