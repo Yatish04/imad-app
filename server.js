@@ -100,7 +100,15 @@ app.post('/comments',function(req,res){
                res.status(500).send(err.toString());
            }
            else{
-               res.status(200).send(result.toString());
+               pool.query('SELECT "comments" FROM "content"',function(err,result){
+                   if(err){
+               res.status(500).send(err.toString());
+           }
+           else{
+               res.send(result.length.toString());
+           }
+                   
+               });
            }
            
        });
