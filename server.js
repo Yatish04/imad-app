@@ -95,7 +95,7 @@ app.post('/comments',function(req,res){
        
        var user=req.session.auth.username;
        console.log(user);
-       res.status(200).send('OK');
+       res.status(200).send(user);
        
    }
    else{
