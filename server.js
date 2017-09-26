@@ -5,8 +5,16 @@ var Pool=require('pg').Pool;
 var crypto=require('crypto');
 var app = express();
 var bodyParser=require('body-parser');
+var session=require('express-session');
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret:'randomstring',
+    cookie:{
+        maxage:1000*60*60*24*1
+    }
+    
+}));
 
 var config={
     user: 'yatishhr',
@@ -100,6 +108,8 @@ app.post('/newlogin',function(req,res){
                 var salt=pass.split('$')[2];
                 var hasht=hash(password,salt);
                 if(hasht===pass){
+                    req.session.auth={userid:result.rows[0].id };
+                    
                     res.send("credentials are correct");
                 }
                 else{
@@ -112,7 +122,16 @@ app.post('/newlogin',function(req,res){
     
 });
 
-
+app.get('/checklogin',function(req,res){
+   
+   if(req.session && req.session.auth && req.session.auth.userid){
+       res.send('you are logged in'+req.session.auth.userid.toString());
+   }
+   else{
+       res.send('You are not logged in');
+   }
+    
+});
 
 
  app.get('/test',function(req,res){
