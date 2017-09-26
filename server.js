@@ -100,7 +100,7 @@ app.post('/comments',function(req,res){
                res.status(500).send(err.toString());
            }
            else{
-               pool.query('SELECT "comments" FROM "content"',function(err,result){
+               pool.query('SELECT comments FROM "content"',function(err,result){
                    if(err){
                res.status(500).send(err.toString());
            }
