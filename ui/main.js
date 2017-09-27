@@ -77,7 +77,7 @@ function login(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200)
             {
-                alert('login successful');
+                alert('login successful\n please go back');
             }
             else{
                 alert('invalid credentials');
