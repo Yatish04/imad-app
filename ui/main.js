@@ -5,7 +5,9 @@ var request=new XMLHttpRequest();
             if(request.status===200)
             {
                var nwtxt=request.responseText;
-               console.log(nwtxt.toString());
+               var change=document.getElementById('commentsection');
+               change.innerHTML=nwtext.toString();
+               
             }
             else{
                 alert('wrong');
