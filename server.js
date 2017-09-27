@@ -105,7 +105,11 @@ app.post('/comments',function(req,res){
                res.status(500).send(err.toString());
            }
            else{
-               res.send(result.rows[9].comments.toString());
+               var string="";
+               for(var t in result.rows){
+                   console.log('column "%s"', t.comments);
+               }
+               res.status(200).send('ok');
            }
                    
                });
