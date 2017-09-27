@@ -83,7 +83,7 @@ function sub(){
                 if(request.status===200){
                     var newtext=request.responseText;
                     //var dive=document.getElementById('commentsection');
-                    console.log('hello');
+                    console.log(newtext.toString());
                 }
                 else{
                     console.log('error1');
