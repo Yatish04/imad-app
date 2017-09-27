@@ -107,9 +107,9 @@ app.post('/comments',function(req,res){
            else{
                var string="";
                for(var t in result.rows){
-                   console.log('column "%s"', t.comments);
+                   string=string+t.comments;
                }
-               res.status(200).send('ok');
+               res.status(200).send(string.toString());
            }
                    
                });
