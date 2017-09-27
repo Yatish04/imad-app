@@ -128,29 +128,23 @@ app.post('/comments',function(req,res){
 });
 
 
-//app.get('/getcomments',function(req,res){
-  //  pool.query('SELECT comments FROM "content"',function(err,result){
-    //               if(err){
-      //         res.status(500).send(err.toString());
-        //   }
-          // else{
-            //   var string="";
-              // var n=result.rowCount;
-//               var i=0;
-  //             for(i=0;i<n;i++){
-    //              string=string+result.rows[i].comments;
-      //         }
-        //       res.send(string.toString());
-          // }
-    
-//});
-
-
-
-
-
-
-
+app.get('/getcomments',function(req,res){
+   pool.query('SELECT comments FROM "content"',function(err,result){
+                   if(err){
+               res.status(500).send(err.toString());
+          }
+           else{
+               var string="";
+               var n=result.rowCount;
+               var i=0;
+               for(i=0;i<n;i++){
+                  string=string+result.rows[i].comments;
+               }
+               res.send(string.toString());
+           }
+           
+    });
+});
 
 
 
