@@ -5,7 +5,7 @@ var request=new XMLHttpRequest();
             if(request.status===200)
             {
                var nwtxt=request.responseText;
-               console.log('hgsc');
+               console.log(nwtxt.toString());
             }
             else{
                 alert('wrong');
