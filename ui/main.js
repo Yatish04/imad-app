@@ -78,11 +78,11 @@ function sub(){
     var request=new XMLHttpRequest();
     //console.log(text);
     request.onreadystatechange=function(){
-            if(request.status===XMLHttpRequest.DONE){
+            if(request.readyState===XMLHttpRequest.DONE){
                 if(request.status===200){
                     var newtext=request.responseText;
                     var dive=document.getElementById('commentsection');
-                    console.log('hello');
+                    console.log(newtext.toString());
                 }
             }
     };
