@@ -104,7 +104,7 @@ function sub(){
                     dive.innerHTML=newtext.toString();
                 }
                 else{
-                    console.log('error1');
+                    alert('Please login to post');
                 }
             }
              else{
