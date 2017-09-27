@@ -106,10 +106,11 @@ app.post('/comments',function(req,res){
            }
            else{
                var string="";
-               for(var t in result.rows){
-                   string=string+t.comments;
-               }
-               res.status(200).send(string.toString());
+               var n=result.rowCount;
+               //for(var t in result.rows){
+                 //  string=string+t.comments;
+               //}
+               res.status(200).send(n.toString());
            }
                    
                });
