@@ -82,7 +82,7 @@ function sub(){
                 if(request.status===200){
                     var newtext=request.responseText;
                     var dive=document.getElementById('commentsection');
-                    console.log(newtext.toString());
+                    console.log('hello');
                 }
             }
     };
