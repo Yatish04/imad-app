@@ -134,13 +134,13 @@ app.get('/getcomments',function(req,res){
                res.status(500).send(err.toString());
           }
            else{
-               var string="";
+               var sting="";
                var n=result.rowCount;
                var i=0;
                for(i=0;i<n;i++){
-                  string=string+result.rows[i].comments;
+                  sting=sting+result.rows[i].comments;
                }
-               res.send(string.toString());
+               res.send(sting.toString());
            }
            
     });
