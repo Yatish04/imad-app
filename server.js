@@ -111,7 +111,7 @@ app.post('/comments',function(req,res){
                for(i=0;i<n;i++){
                   string=string+result.rows[i].comments;
                }
-               res.status(200).send(string.toString());
+               res.send(string.toString());
            }
                    
                });
