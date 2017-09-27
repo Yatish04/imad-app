@@ -1,6 +1,22 @@
-//window.onload=function(){
-//var button=document.getElementById('btn1');
+window.onload=function(){
+var request=new XMLHttpRequest();
+   request.onreadystatechange=function(){
+        if(request.readyState===XMLHttpRequest.DONE){
+            if(request.status===200)
+            {
+               var nwtxt=request.responseText;
+               console.log('hgsc');
+            }
+            else{
+                alert('wrong');
+            }
+        }
+    };
+request.open('GET','http://yatishhr.imad.hasura-app.io/getcomments',true);
+    request.send(null);
 
+
+};
 //button.onclick=function() {
   //  var request= new XMLHttpRequest();
     //request.open('GET','http://yatishhr.imad.hasura-app.io/new',true);
