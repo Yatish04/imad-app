@@ -6,7 +6,7 @@ var request=new XMLHttpRequest();
             {
                var nwtxt=request.responseText;
                var chnge=document.getElementById('commentsection');
-               chnge.innerHTML=nwtext.toString();
+               chnge.innerHTML=nwtxt.toString();
                
             }
             else{
