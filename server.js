@@ -107,10 +107,11 @@ app.post('/comments',function(req,res){
            else{
                var string="";
                var n=result.rowCount;
-               //for(var t in result.rows){
-                 //  string=string+t.comments;
-               //}
-               res.status(200).send(n.toString());
+               var i=0;
+               for(i=0;i<n;i++){
+                  string=string+result.rows[i].comments;
+               }
+               res.status(200).send(string.toString());
            }
                    
                });
