@@ -76,17 +76,24 @@ function login(){
 function sub(){
     
     var request=new XMLHttpRequest();
+    var text=document.getElementById('comment').value+'<hr>';
     //console.log(text);
     request.onreadystatechange=function(){
             if(request.readyState===XMLHttpRequest.DONE){
                 if(request.status===200){
                     var newtext=request.responseText;
-                    var dive=document.getElementById('commentsection');
-                    console.log(newtext.toString());
+                    //var dive=document.getElementById('commentsection');
+                    console.log('hello');
+                }
+                else{
+                    console.log('error1');
                 }
             }
+             else{
+                    console.log('error2');
+                }
     };
-    var text=document.getElementById('comment').value+'<hr>';
+    
     
     request.open('POST','http://yatishhr.imad.hasura-app.io/comments',true);
     request.setRequestHeader('Content-Type','application/json');
